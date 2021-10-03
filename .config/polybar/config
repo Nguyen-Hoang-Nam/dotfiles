@@ -1,0 +1,118 @@
+[bar/top]
+height = 36
+width = 100%
+
+background = #1f1f1f
+foreground = #EEE
+
+line-size = 1
+
+padding-left = 2
+padding-right = 2
+
+separator = "  "
+
+font-0 = FiraCode\ Nerd\ Font\ Mono:size=16;1
+
+modules-left = icon i3 
+modules-center = date
+modules-right = wireless-network pulseaudio battery
+
+[module/wireless-network]
+type = internal/network
+interface = wlp0s20f3
+interval = 1.0
+
+format-connected = <label-connected>
+label-connected = 直 %downspeed%
+label-disconnected =  睊
+label-disconnected-foreground = #66
+
+[module/date]
+type = internal/date
+date = %%{F#fff}%a, %d %b %Y  %%{F#fff}%H:%M%%{F-}
+
+[module/i3]
+type = internal/i3
+
+strip-wsnumbers = true
+index-sort = true
+
+fuzzy-match = true
+
+ws-icon-0 = 1;♚
+ws-icon-1 = 2;♛
+ws-icon-2 = 3;♜
+ws-icon-3 = 4;♝
+ws-icon-4 = 5;♞
+ws-icon-default = ♟
+
+label-dimmed-underline = ${root.background}
+
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 0
+label-mode-background = #e60053
+
+label-focused =  %index%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 2
+
+label-separator = |
+label-separator-padding = 0
+label-separator-foreground = #ffb52a
+
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+click-right = pavucontrol
+
+format-volume = <ramp-volume> <label-volume>
+
+label-muted = ﱝ
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+
+format-charging = <ramp-capacity> <label-charging>
+label-charging = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+
+label-full = 
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #de0037
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/icon]
+type = custom/text
+content = 
+content-foreground = #DD4814

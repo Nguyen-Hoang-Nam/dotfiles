@@ -1,0 +1,14 @@
+# Nodejs
+node_modules/
+.env
+coverage
+
+# Rust
+target/
+Cargo.lock
+
+# Python
+wheels/
+*.egg-info/
+.ipynb_checkpoints
+

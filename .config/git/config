@@ -1,0 +1,34 @@
+
+[init]
+	defaultBranch = main
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[alias]
+	a = add .
+	c = commit
+	s = status
+	l = log --graph --date=short
+	p = push
+
+[format]
+	pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+
+[core]
+	editor = nvim
+	excludesfile = ~/.config/git/.gitignore
+
+[user]
+	email = nguyenhoangnam.dev@gmail.com
+	name = Nguyen Hoang Nam
+
+[commit]
+	template = ~/.config/git/.gitmessage
+[pull]
+	ff = only
