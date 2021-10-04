@@ -5,8 +5,8 @@
 ########################################
 
 function zle-line-init zle-keymap-select {
-	PROMPT=`$XDG_DATA_HOME/zsh/plugin/purs/target/release/purs prompt -k "$KEYMAP" -r "$?" --venv "${${VIRTUAL_ENV:t}%-*}"`
-	zle reset-prompt
+    PROMPT=`$XDG_DATA_HOME/zsh/plugin/purs/target/release/purs prompt -k "$KEYMAP" -r "$?" --venv "${${VIRTUAL_ENV:t}%-*}"`
+    zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -14,7 +14,7 @@ zle -N zle-keymap-select
 autoload -Uz add-zsh-hook
 
 function _prompt_purs_precmd() {
-	$XDG_DATA_HOME/zsh/plugin/purs/target/release/purs precmd
+    $XDG_DATA_HOME/zsh/plugin/purs/target/release/purs precmd
 }
 add-zsh-hook precmd _prompt_purs_precmd
 
@@ -76,18 +76,18 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 #
 ########################################
 
+source $XDG_DATA_HOME/nvm/nvm.sh
 source $XDG_DATA_HOME/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $XDG_DATA_HOME/zsh/plugin/zsh-command-not-found/command-not-found.plugin.zsh
 source $XDG_DATA_HOME/zsh/plugin/zsh-colored-man-pages/colored-man-pages.plugin.zsh
 source $XDG_DATA_HOME/zsh/plugin/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $XDG_DATA_HOME/zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $XDG_DATA_HOME/zsh/plugin/zsh-autopair/autopair.zsh
-source $XDG_DATA_HOME/nvm/nvm.sh
 
 export PATH="$XDG_DATA_HOME/java/spring-2.5.3/bin:$HOME/.local/bin:$XDG_DATA_HOME/cargo/bin:$XDG_DATA_HOME/go/bin:$PATH"
 
-bindkey "${terminfo[kcuu1]}" history-substring-search-up
-bindkey "${terminfo[kcud1]}" history-substring-search-down
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-up
 
 eval "$(zoxide init zsh)"
 
@@ -107,24 +107,45 @@ alias python="python3.9"
 alias b="bat --theme=ansi --tabs=2"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias rm="rm -i"
-alias luamake=/home/nguyenhoangnam/.local/share/dev/lua-language-server/3rd/luamake/luamake
+alias c="clear"
+alias m="run-help"
+alias weather="curl wttr.in"
+alias back="cd -"
+
+# Noglob
 alias npm="noglob npm"
 alias http="noglob http"
-alias ssh="kitty +kitten ssh"
-alias spring-boot-run="./mvnw spring-boot:run"
 
+# Git
 alias ga="git add ."
 alias gc="git commit"
 alias gl="git log --graph --decorate --pretty=oneline --abbrev-commit"
-
-alias c="clear"
-alias m="run-help"
-alias dev="cd $XDG_DATA_HOME/dev"
-alias dynamodb="aws dynamodb --endpoint-url http://localhost:8000"
-alias icat="kitty +kitten icat"
-alias weather="curl wttr.in"
 alias gitupdate="git remote update && print '\n' && git status -uno"
-alias back="cd -"
-alias sail="bash vendor/bin/sail"
 
+# Kitty
+alias ssh="kitty +kitten ssh"
+alias icat="kitty +kitten icat"
+
+# Framework
+alias dynamodb="aws dynamodb --endpoint-url http://localhost:8000"
+alias sail="bash vendor/bin/sail"
+alias spring-boot-run="./mvnw spring-boot:run"
+alias luamake="/home/nguyenhoangnam/.local/share/dev/lua-language-server/3rd/luamake/luamake"
+
+# Suffix aliases
 alias -s git="git clone"
+alias -s json="neovim"
+alias -s md="neovim"
+alias -s properties="neovim"
+alias -s yml="neovim"
+alias -s yaml="neovim"
+alias -s mod="neovim"
+alias -s toml="neovim"
+alias -s xml="neovim"
+alias -s js="neovim"
+alias -s ts="neovim"
+alias -s java="neovim"
+alias -s lua="neovim"
+alias -s py="neovim"
+alias -s rs="neovim"
+alias -s go="neovim"
