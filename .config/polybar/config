@@ -24,13 +24,13 @@ interface = wlp0s20f3
 interval = 1.0
 
 format-connected = <label-connected>
-label-connected = 直 %downspeed%
+label-connected = 直
 label-disconnected =  睊
 label-disconnected-foreground = #66
 
 [module/date]
 type = internal/date
-date = %%{F#fff}%a, %d %b %Y  %%{F#fff}%H:%M%%{F-}
+date = %%{F#fff}%a, %d %b  %%{F#fff}%H:%M%%{F-}
 
 [module/i3]
 type = internal/i3
@@ -83,7 +83,7 @@ sink = alsa_output.pci-0000_12_00.3.analog-stereo
 
 click-right = pavucontrol
 
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume>
 
 label-muted = ﱝ
 label-muted-foreground = #666

@@ -84,7 +84,7 @@ source $XDG_DATA_HOME/zsh/plugin/fast-syntax-highlighting/fast-syntax-highlighti
 source $XDG_DATA_HOME/zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $XDG_DATA_HOME/zsh/plugin/zsh-autopair/autopair.zsh
 
-export PATH="$XDG_DATA_HOME/java/spring-2.5.3/bin:$HOME/.local/bin:$XDG_DATA_HOME/cargo/bin:$XDG_DATA_HOME/go/bin:$PATH"
+export PATH="/home/nguyenhoangnam/snap/flutter/common/flutter/bin:/home/nguyenhoangnam/.local/share/lsp/zig:$XDG_DATA_HOME/java/spring-2.5.3/bin:$HOME/.local/bin:$XDG_DATA_HOME/cargo/bin:$XDG_DATA_HOME/go/bin:$PATH"
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-up
@@ -98,10 +98,8 @@ eval "$(zoxide init zsh)"
 ########################################
 
 alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
 alias l="exa --group-directories-first --all --icons --git --long"
-alias ls="exa --group-directories-first --all --icons --git --long"
+# alias ls="exa --group-directories-first --all --icons --git --long"
 alias tree="exa --tree --git-ignore --group-directories-first --all --icons --git"
 alias python="python3.9"
 alias b="bat --theme=ansi --tabs=2"
@@ -111,6 +109,7 @@ alias c="clear"
 alias m="run-help"
 alias weather="curl wttr.in"
 alias back="cd -"
+alias g="git"
 
 # Noglob
 alias npm="noglob npm"
@@ -119,8 +118,9 @@ alias http="noglob http"
 # Git
 alias ga="git add ."
 alias gc="git commit"
+alias gp="git pull"
 alias gl="git log --graph --decorate --pretty=oneline --abbrev-commit"
-alias gitupdate="git remote update && print '\n' && git status -uno"
+alias gu="git remote update && print '\n' && git status -uno"
 
 # Kitty
 alias ssh="kitty +kitten ssh"
@@ -129,7 +129,8 @@ alias icat="kitty +kitten icat"
 # Framework
 alias dynamodb="aws dynamodb --endpoint-url http://localhost:8000"
 alias sail="bash vendor/bin/sail"
-alias spring-boot-run="./mvnw spring-boot:run"
+alias spring-boot-run="mvn spring-boot:run"
+alias fastapi-run="uvicorn main:app"
 alias luamake="/home/nguyenhoangnam/.local/share/dev/lua-language-server/3rd/luamake/luamake"
 
 # Suffix aliases
@@ -149,3 +150,4 @@ alias -s lua="neovim"
 alias -s py="neovim"
 alias -s rs="neovim"
 alias -s go="neovim"
+alias -s pdf="brave-browser"

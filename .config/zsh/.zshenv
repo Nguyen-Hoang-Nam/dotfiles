@@ -23,6 +23,8 @@ export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export ZSH=$XDG_CONFIG_HOME/zsh
 export NVIM=$XDG_CONFIG_HOME/nvim
 
+export ANDROID_SDK_HOME=$HOME
+
 export JAR="$XDG_DATA_HOME/lsp/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.200.v20210416-2027.jar"
 # export GRADLE_HOME=/opt/gradle/gradle-7.1.1
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
