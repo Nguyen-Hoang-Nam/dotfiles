@@ -34,7 +34,12 @@ export WORKSPACE="$XDG_DATA_HOME/java"
 
 export VAGRANT_DEFAULT_PROVIDER=kvm
 
-export AWS_DEFAULT_REGION="ap-southeast-1"
+export AWS_DEFAULT_REGION="us-west-2"
+
+export FLYCTL_INSTALL="/home/nguyenhoangnam/.fly"
+export PATH="$XDG_DATA_HOME/dev/bin:$FLYCTL_INSTALL/bin:$PATH"
+
+export LSP="$XDG_DATA_HOME/lsp"
 
 HISTFILE=$XDG_DATA_HOME/zsh/.zsh_history
 HISTSIZE=1000

@@ -77,6 +77,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 ########################################
 
 source $XDG_DATA_HOME/nvm/nvm.sh
+source $HOME/.asdf/asdf.sh
 source $XDG_DATA_HOME/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $XDG_DATA_HOME/zsh/plugin/zsh-command-not-found/command-not-found.plugin.zsh
 source $XDG_DATA_HOME/zsh/plugin/zsh-colored-man-pages/colored-man-pages.plugin.zsh
@@ -84,7 +85,7 @@ source $XDG_DATA_HOME/zsh/plugin/fast-syntax-highlighting/fast-syntax-highlighti
 source $XDG_DATA_HOME/zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $XDG_DATA_HOME/zsh/plugin/zsh-autopair/autopair.zsh
 
-export PATH="/home/nguyenhoangnam/snap/flutter/common/flutter/bin:/home/nguyenhoangnam/.local/share/lsp/zig:$XDG_DATA_HOME/java/spring-2.5.3/bin:$HOME/.local/bin:$XDG_DATA_HOME/cargo/bin:$XDG_DATA_HOME/go/bin:$PATH"
+export PATH="/home/nguyenhoangnam/.local/share/lsp/ltex-ls-15.2.0/bin:/home/nguyenhoangnam/snap/flutter/common/flutter/bin:/home/nguyenhoangnam/.local/share/lsp/zig:$XDG_DATA_HOME/java/spring-2.5.3/bin:$HOME/.local/bin:$XDG_DATA_HOME/cargo/bin:$XDG_DATA_HOME/go/bin:$PATH"
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-up
@@ -110,6 +111,7 @@ alias m="run-help"
 alias weather="curl wttr.in"
 alias back="cd -"
 alias g="git"
+alias clangd="clangd-12"
 
 # Noglob
 alias npm="noglob npm"
